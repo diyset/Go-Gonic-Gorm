@@ -1,7 +1,9 @@
 package utility
 
 import (
+	"fmt"
 	"regexp"
+	"strconv"
 	"time"
 )
 
@@ -33,4 +35,11 @@ func DateFormatMyApp(date string) (time.Time, error) {
 
 func DateFormatMyLayout(date time.Time) (string) {
 	return date.Format("01-02-2006")
+}
+
+func GeneratorIdOrder(metodePengiriman int, idNasabah int) (string) {
+	timeSuffix := int(time.Time.UnixNano(time.Now()))/100000
+	prefixId := strconv.Itoa(timeSuffix) + strconv.Itoa(metodePengiriman) + strconv.Itoa(idNasabah)
+	fmt.Println(len(prefixId))
+	return prefixId
 }

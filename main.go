@@ -5,6 +5,7 @@ import (
 	"my-rest/config"
 	"my-rest/controller"
 	myAuth "my-rest/controller/auth"
+	"my-rest/dto/request"
 	"net/http"
 	"os"
 	"time"
@@ -29,7 +30,7 @@ func main() {
 	api := router.Group("/api")
 	{
 		api.POST("/login", myAuth.LoginHandler)
-		api.GET("/", indexHandler)
+		api.POST("/test", indexHandler)
 		api.GET("/hello/:name", helloHandler)
 		api.GET("/person/:id", myAuth.Auth, inDb.GetPerson)
 		api.GET("/persons", inDb.GetPersons)
@@ -42,17 +43,35 @@ func main() {
 
 		api.POST("/add/warehouse/product", inDb.DropProductInWarehouse)
 		api.GET("/get/warehouses", inDb.GetAllWarehouse)
+
+		api.POST("/post/order", inDb.PostOrder)
 	}
 
 	router.Run(":" + PORT)
 }
 
 func indexHandler(c *gin.Context) {
+	bodyRequest := new(request.DataList)
+	err := c.Bind(bodyRequest)
+	if err != nil {
+		panic("Error " + err.Error())
+	}
+	//testJson := c.PostForm("list")
+	fmt.Println(len(bodyRequest.List))
+	responseBody := gin.H{}
+	var responseBodys = []gin.H{}
+	for _, element := range bodyRequest.List {
+		responseBody = gin.H{
+			"test": element.Test,
+		}
+		responseBodys = append(responseBodys, responseBody)
+	}
 	c.JSON(http.StatusOK, gin.H{
 		"title":      "Tutorial Golang and GORM",
 		"timestamp":  time.Now().UnixNano() / int64(time.Millisecond),
 		"authorized": "Dian Setiyadi",
 		"port":       PortG,
+		"testJson":   responseBodys,
 	})
 }
 

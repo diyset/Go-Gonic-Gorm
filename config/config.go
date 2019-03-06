@@ -34,6 +34,13 @@ func DBinit() *gorm.DB {
 	// db.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(
 	// 	&structs.Nasabah{}, &structs.Alamat{},
 	// )
-	db.AutoMigrate(&structs.Nasabah{}, &structs.Alamat{}, &structs.Product{}, &structs.Warehouse{})
+	db.AutoMigrate(
+		&structs.Nasabah{},
+		&structs.Alamat{},
+		&structs.Product{},
+		&structs.Warehouse{},
+		&structs.Order{},
+		&structs.OrderDetail{},
+		)
 	return db
 }

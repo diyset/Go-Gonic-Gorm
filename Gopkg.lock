@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/bearbin/go-age"
+  packages = ["."]
+  revision = "316d0c1e7cd1ecf68e4313ac739dc8a714f63934"
+
+[[projects]]
   name = "github.com/dgrijalva/jwt-go"
   packages = ["."]
   revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
@@ -11,7 +17,7 @@
   branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
-  revision = "a7658810eb745c2f22927282dea478278103a897"
+  revision = "5545eab6dad3bbbd6c5ae9186383c2a9d23c0dae"
 
 [[projects]]
   name = "github.com/gin-gonic/gin"
@@ -33,8 +39,8 @@
 [[projects]]
   name = "github.com/golang/protobuf"
   packages = ["proto"]
-  revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
-  version = "v1.2.0"
+  revision = "c823c79ea1570fb5ff454033735a8e68575d1d0f"
+  version = "v1.3.0"
 
 [[projects]]
   name = "github.com/jinzhu/gorm"
@@ -52,6 +58,12 @@
   revision = "04140366298a54a039076d798123ffa108fff46c"
 
 [[projects]]
+  name = "github.com/joho/godotenv"
+  packages = ["."]
+  revision = "23d116af351c84513e1946b527c88823e476be13"
+  version = "v1.3.0"
+
+[[projects]]
   name = "github.com/json-iterator/go"
   packages = ["."]
   revision = "1624edc4454b8682399def8740d46db5e4362ba4"
@@ -60,8 +72,8 @@
 [[projects]]
   name = "github.com/mattn/go-isatty"
   packages = ["."]
-  revision = "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c"
-  version = "v0.0.4"
+  revision = "369ecd8cea9851e459abb67eb171853e3986591e"
+  version = "v0.0.6"
 
 [[projects]]
   name = "github.com/modern-go/concurrent"
@@ -85,7 +97,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "e77772198cdc3dbfcf7f2de96630204df9fd3a0b"
+  revision = "30e92a19ae4a77dde818b8c3d41d51e4850cba12"
 
 [[projects]]
   name = "google.golang.org/appengine"
@@ -108,6 +120,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "f4c720f2a00a9a83d2ed931198ec83e2b1f4dc85d22844dcd406f313ea6dc41b"
+  inputs-digest = "d48c6300e0e1c24c9723be4df3586b47054a5ce3b709d29fd6ca902fe1dbb1af"
   solver-name = "gps-cdcl"
   solver-version = 1

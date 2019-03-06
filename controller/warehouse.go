@@ -19,6 +19,7 @@ func (idb *InDB) DropProductInWarehouse(c *gin.Context) {
 	quantity := c.PostForm("quantity")
 	tanggalKirim := c.PostForm("tanggalKirim")
 
+
 	errProduct := idb.DB.Where("id_product= ?", idProduct).First(&tblproduct).Error
 	if errProduct != nil {
 		panic("Id Product Not Found!")

@@ -16,9 +16,13 @@ type Nasabah struct {
 	IsAdult      bool      `json:"isAdult"`
 }
 
+func GetFullNameNasabah(nasabah Nasabah) (string) {
+	return nasabah.First_Name + " " + nasabah.Last_Name
+}
+
 type Alamat struct {
-	IdAlamat  uint   `gorm:"primary_key"`
-	Audit            //extend Audit.go
+	IdAlamat uint `gorm:"primary_key" json:"idAlamat"`
+	Audit //extend Audit.go
 	NamaJalan string `json:"namaJalan"`
 	Rt        string `json:"rt"`
 	Rw        string `json:"rw"`
