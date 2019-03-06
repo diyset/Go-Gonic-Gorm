@@ -9,7 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/diyset/JWT-REST-API-NODEJS-HEROKU.svg)](https://github.com/diyset/JWT-REST-API-NODEJS-HEROKU/issues)
 
 ## Demo On The Heroku (Disable)
-[![DEMO](https://www.herokucdn.com/deploy/button.svg)](https://my-app-dian.herokuapp.com/)
+[![DEMO](https://www.herokucdn.com/deploy/button.svg)]()
 
 ## Collection API Postman
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/ca2a1c398c63195b58d6)
